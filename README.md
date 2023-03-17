@@ -1,6 +1,6 @@
 # movie_database_api
 
-This project I use the API provider by TMDB[TMDB](https://www.themoviedb.org/),
+This project I use the API provider by [TMDB](https://www.themoviedb.org/),
 
 Route : Top Rated Movies (https://developers.themoviedb.org/3/movies/get-top-rated-movies)
 
