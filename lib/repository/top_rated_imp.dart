@@ -7,8 +7,8 @@ class TopRatedImp implements TopRatedRepository {
   Future<dynamic> getTopRated(int page) async {
     Map<String, dynamic> pageParam = {'page' : page};
     var response = await ApiController.getDio(TopRatedRepository.route, pageParam);
-    var listTopRated = MovieModel.listFromJson(response['response']);
-    Map<String, dynamic> res = {'listTopRated' : listTopRated, 'totalPages' : response['totalPages']};
+    var listTopRated = MovieModel.listFromJson(response.data['results']);
+    Map<String, dynamic> res = {'listTopRated' : listTopRated, 'totalPages' : response.data['total_pages']};
     return res; 
   }
 }

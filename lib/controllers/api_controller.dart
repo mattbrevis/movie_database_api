@@ -14,8 +14,7 @@ class ApiController {
    static dynamic getDio(String path, Map<String,dynamic> queryP)async {
     queryP.addAll(Api.queryParameters);       
     final Dio dio= Dio();
-    var response =await dio.get(Api.urlApi+path, queryParameters: queryP);
-    Map<String, dynamic> resp = {'response' : response.data['results'], 'totalPages': response.data['total_pages']};
-    return resp;
+    var response =await dio.get(Api.urlApi+path, queryParameters: queryP);   
+    return response;
   }
 }

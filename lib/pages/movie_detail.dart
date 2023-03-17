@@ -43,21 +43,27 @@ class MovieDetail extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    'Overview: ${movieModel.overview}',
-                    style: const TextStyle(fontSize: 20, color: Colors.grey),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    movieModel.title,
+                    style: Theme.of(context).textTheme.titleLarge,
+                    textAlign: TextAlign.center,
                   ),
-                  Text(
-                    'Release Date: $dtReleaseMask',
-                    style: const TextStyle(fontSize: 16, color: Colors.grey),
-                  )
-                ],
-              ),
+                ),
+                Text(
+                  'Overview: ${movieModel.overview}',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                Text(
+                  'Release Date: $dtReleaseMask',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                )
+              ],
             ),
           ),
         ],

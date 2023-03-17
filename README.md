@@ -1,16 +1,18 @@
 # movie_database_api
 
-A new Flutter project.
+This project I use the API provider by TMDB[TMDB](https://www.themoviedb.org/),
 
-## Getting Started
+Route : Top Rated Movies (https://developers.themoviedb.org/3/movies/get-top-rated-movies)
 
-This project is a starting point for a Flutter application.
+## Packages: 
+- DIO [DIO](https://pub.dev/packages/dio)
+- cached_network_image [cached_network_image](https://pub.dev/packages/cached_network_image)
 
-A few resources to get you started if this is your first Flutter project:
+## List Top Rated Movies:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+In this project, I worked with pagination and infinite scrolling(until the currentPage==totalPages).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Images from app: 
+
+
+
