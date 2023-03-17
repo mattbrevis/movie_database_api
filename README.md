@@ -5,8 +5,8 @@ This project I use the API provider by TMDB[TMDB](https://www.themoviedb.org/),
 Route : Top Rated Movies (https://developers.themoviedb.org/3/movies/get-top-rated-movies)
 
 ## Packages: 
-- DIO [DIO](https://pub.dev/packages/dio)
-- cached_network_image [cached_network_image](https://pub.dev/packages/cached_network_image)
+- [DIO](https://pub.dev/packages/dio)
+- [cached_network_image](https://pub.dev/packages/cached_network_image)
 
 ## List Top Rated Movies:
 
