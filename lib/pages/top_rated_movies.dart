@@ -14,12 +14,12 @@ class _TopRatedMoviesPageState extends State<TopRatedMoviesPage> {
   List<MovieModel> listMovie = [];
   bool isLoading = true;
   int page = 1;
-  int currentPage = 1;
+  int totalPages = 0;
   final listController = ScrollController();
   loadTopRatedMovies() async {
-    dynamic respTopRated =  await TopRatedImp().getTopRated(page);
+    dynamic respTopRated = await TopRatedImp().getTopRated(page);
     List<MovieModel> list = respTopRated['listTopRated'];
-    currentPage = respTopRated['currentPage'];
+    totalPages = respTopRated['totalPages'];
     if (listMovie.isEmpty) {
       listMovie = list;
     } else {
@@ -27,7 +27,7 @@ class _TopRatedMoviesPageState extends State<TopRatedMoviesPage> {
     }
     setState(() {
       isLoading = false;
-      if(page<currentPage){
+      if (page < totalPages) {
         page++;
       }
     });
@@ -37,7 +37,7 @@ class _TopRatedMoviesPageState extends State<TopRatedMoviesPage> {
   void initState() {
     loadTopRatedMovies();
     listController.addListener(() {
-      if (listController.position.maxScrollExtent == listController.offset && page<currentPage) {
+      if (listController.position.maxScrollExtent == listController.offset && page<totalPages) {
         loadTopRatedMovies();
       }
     });
@@ -60,10 +60,12 @@ class _TopRatedMoviesPageState extends State<TopRatedMoviesPage> {
         if (index < listMovie.length) {
           return CardMovieWidget(movieModel: listMovie[index]);
         } else {
-          return const Padding(
-            padding:  EdgeInsets.all(8.0),
-            child:  Center(
-              child: CircularProgressIndicator(),
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(
+              child: page == totalPages
+                  ? Container()
+                  : const CircularProgressIndicator(),
             ),
           );
         }
