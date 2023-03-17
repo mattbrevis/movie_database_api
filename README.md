@@ -15,4 +15,6 @@ In this project, I worked with pagination and infinite scrolling(until the curre
 ## Images from app: 
 <img src="https://github.com/mattbrevis/movie_database_api/blob/main/images/video.gif?raw=true">
 
+<img src="https://github.com/mattbrevis/movie_database_api/blob/main/images/home.jpeg?raw=true">
 
+<img src="https://github.com/mattbrevis/movie_database_api/blob/main/images/detail.jpeg?raw=true">
