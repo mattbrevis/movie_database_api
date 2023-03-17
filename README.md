@@ -11,6 +11,8 @@ Route : Top Rated Movies (https://developers.themoviedb.org/3/movies/get-top-rat
 ## List Top Rated Movies:
 
 In this project, I worked with pagination and infinite scrolling(until the currentPage==totalPages).
+DIO package provides me the functions to make all the methods request from API.
+But in this project I just used the GET Method.
 
 ## Images from app: 
 <img src="https://github.com/mattbrevis/movie_database_api/blob/main/images/video.gif?raw=true">
