@@ -10,4 +10,12 @@ class ApiController {
     var response = await dio.get('${Api.urlApi}/authentication/token/new?api_key=${Api.key}');    
     return response.data['request_token'];    
   }
+
+   static dynamic getDio(String path, Map<String,dynamic> queryP)async {
+    queryP.addAll(Api.queryParameters);       
+    final Dio dio= Dio();
+    var response =await dio.get(Api.urlApi+path, queryParameters: queryP);
+    Map<String, dynamic> resp = {'response' : response.data['results'], 'page': response.data['page']};
+    return resp;
+  }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_database_api/constants/color_theme.dart';
 
 import '../constants/routes.dart';
-import 'home_page.dart';
+import 'top_rated_movies.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)))),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const TopRatedMoviesPage(),
       routes: myRoutes,
     );
   }
