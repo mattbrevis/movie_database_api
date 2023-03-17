@@ -13,6 +13,6 @@ Route : Top Rated Movies (https://developers.themoviedb.org/3/movies/get-top-rat
 In this project, I worked with pagination and infinite scrolling(until the currentPage==totalPages).
 
 ## Images from app: 
-
+<img src="https://github.com/mattbrevis/movie_database_api/blob/main/images/video.gif?raw=true">
 
 
