@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:movie_database_api/models/movie_model.dart';
 import 'package:movie_database_api/pages/movie_detail.dart';
 
+import '../utils/platform_details.dart';
+
 class CardMovieWidget extends StatelessWidget {
   final MovieModel movieModel;
   const CardMovieWidget(
@@ -15,7 +17,7 @@ class CardMovieWidget extends StatelessWidget {
     return Card(
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.25,
+        height: PlatformDetails().isMobile ? MediaQuery.of(context).size.height * 0.25 : 300,
         child: GestureDetector(
                 onTap: (() {
                   Navigator.push(context,MaterialPageRoute(builder: (context) => MovieDetail(movieModel: movieModel,)
@@ -25,7 +27,7 @@ class CardMovieWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                width: MediaQuery.of(context).size.width * .4,              
+                width: PlatformDetails().isMobile ? MediaQuery.of(context).size.width * .4 : 200,              
                   child: Hero(
                     tag: movieModel.id,
                     child: CachedNetworkImage(
@@ -46,29 +48,33 @@ class CardMovieWidget extends StatelessWidget {
                     ),
                   ),                
               ),
-              Container(
-                margin: const EdgeInsets.all(10),
-                width: MediaQuery.of(context).size.width * .5,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      movieModel.title,
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold)
-                          ,
-                    textAlign: TextAlign.center
-                    ),
-                    Text(movieModel.overview.length > 300
-                        ? '${movieModel.overview.substring(0, 200)}...'
-                        : movieModel.overview , style: Theme.of(context).textTheme.bodySmall, ),
-                    const Text(
-                      'Read more...',
-                      style: TextStyle(color: Colors.grey),
-                      textAlign: TextAlign.end,
-                    )
-                  ],
+              Expanded(
+                child: Container(
+                  margin: const EdgeInsets.all(10),
+                  width: MediaQuery.of(context).size.width * .5,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      
+                         Text(
+                          movieModel.title,
+                          style: const TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.bold)
+                              ,
+                        textAlign: TextAlign.center
+                        ),
+                      
+                      Text(movieModel.overview.length > 300
+                          ? '${movieModel.overview.substring(0, PlatformDetails().isMobile ?150: 300)}...'
+                          : movieModel.overview , style: PlatformDetails().isMobile ? Theme.of(context).textTheme.bodySmall : Theme.of(context).textTheme.bodyText1, ),
+                      const Text(
+                        'Read more...',
+                        style: TextStyle(color: Colors.grey),
+                        textAlign: TextAlign.end,
+                      )
+                    ],
+                  ),
                 ),
               )
             ],
