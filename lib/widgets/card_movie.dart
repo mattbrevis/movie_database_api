@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_database_api/models/movie_model.dart';
 import 'package:movie_database_api/pages/movie_detail.dart';
 
+import '../constants/api.dart';
 import '../utils/platform_details.dart';
 
 class CardMovieWidget extends StatelessWidget {
@@ -31,7 +32,7 @@ class CardMovieWidget extends StatelessWidget {
                   child: Hero(
                     tag: movieModel.id,
                     child: CachedNetworkImage(
-                      imageUrl:  'https://image.tmdb.org/t/p/w500${movieModel.posterPath}',
+                      imageUrl:  Api.imageMovie+movieModel.posterPath,
                       imageBuilder: (context, imageProvider) => Container(
                         decoration: BoxDecoration(
                           image: DecorationImage(
