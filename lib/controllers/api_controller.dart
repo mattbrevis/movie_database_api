@@ -1,7 +1,7 @@
 
 
 import 'package:dio/dio.dart';
-import 'package:movie_database_api/core/api.dart';
+import 'package:movie_database_api/constants/api.dart';
 
 class ApiController {
   

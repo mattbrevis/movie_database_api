@@ -31,7 +31,7 @@ class CardMovieWidget extends StatelessWidget {
                   child: Hero(
                     tag: movieModel.id,
                     child: CachedNetworkImage(
-                      imageUrl: 'https://image.tmdb.org/t/p/w500${movieModel.posterPath}',
+                      imageUrl:  'https://image.tmdb.org/t/p/w500${movieModel.posterPath}',
                       imageBuilder: (context, imageProvider) => Container(
                         decoration: BoxDecoration(
                           image: DecorationImage(
@@ -66,7 +66,7 @@ class CardMovieWidget extends StatelessWidget {
                         ),
                       
                       Text(movieModel.overview.length > 300
-                          ? '${movieModel.overview.substring(0, PlatformDetails().isMobile ?150: 300)}...'
+                          ? '${movieModel.overview.substring(0, 200)}...'
                           : movieModel.overview , style: PlatformDetails().isMobile ? Theme.of(context).textTheme.bodySmall : Theme.of(context).textTheme.bodyText1, ),
                       const Text(
                         'Read more...',
